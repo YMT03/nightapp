@@ -1,4 +1,4 @@
-package ar.com.edu.unaj.NightApp;
+package ar.com.edu.unaj.nightapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
