@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Ubicacion (BO).
  */
 
-@Entity(name = "ubicacion")
+@Entity(name = "ubicaciones")
 @Data
 public class Ubicacion {
 

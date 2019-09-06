@@ -3,11 +3,12 @@ package ar.com.edu.unaj.nightapp.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Establecimiento (BO).
  */
-@Entity(name = "establecimiento")
+@Entity(name = "establecimientos")
 @Data
 public class Establecimiento {
 
@@ -20,5 +21,9 @@ public class Establecimiento {
     private String descripcion;
     @OneToOne(cascade = {CascadeType.ALL})
     private Ubicacion ubicacion;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "establecimiento")
+    private List<Comentario> comentarios;
+
 
 }
