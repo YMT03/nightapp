@@ -32,7 +32,7 @@ public class EstablecimientoMapper {
     public Establecimiento toModel(EstablecimientoDTO establecimientoDTO){
         Establecimiento establecimiento = new Establecimiento();
         establecimiento.setId(establecimientoDTO.getId());
-        establecimiento.setNombre(establecimiento.getNombre());
+        establecimiento.setNombre(establecimientoDTO.getNombre());
         return establecimiento;
     }
 

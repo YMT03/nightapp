@@ -4,6 +4,7 @@ import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoMapper;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -53,6 +54,17 @@ public class EstablecimientoEndpoint {
     @ResponseBody
     public ResponseEntity<EstablecimientoDTO> getById(@PathVariable Long id) throws Exception {
         return ResponseEntity.ok(establecimientoMapper.mapToDTO(establecimientoService.getById(id)));
+    }
+
+    /**
+     * Crea un nuevo Establecimiento
+     * @param establecimientoDTO TODO Posiblemente se requiera especializar el EstablecimientoDTO con @Valid y validar campos
+     * @return 201 CREATED. TODO Verificar Exception en parseo/ insert datos no nulleables. Distincion, no es  500 si esta mal el Request param.
+     */
+    @PostMapping
+    @ResponseBody
+    public ResponseEntity<EstablecimientoDTO> insert(@RequestBody EstablecimientoDTO establecimientoDTO){
+        return ResponseEntity.status(HttpStatus.CREATED).body(establecimientoMapper.mapToDTO(establecimientoService.insert(establecimientoMapper.toModel(establecimientoDTO))));
     }
 
 

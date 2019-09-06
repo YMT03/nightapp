@@ -1,6 +1,7 @@
 package ar.com.edu.unaj.nightapp.service;
 
 import ar.com.edu.unaj.nightapp.dao.EstablecimientoDAO;
+import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
 import ar.com.edu.unaj.nightapp.model.Establecimiento;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,15 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     @Override
     public Establecimiento getById(Long id) throws Exception {
         return establecimientoDAO.findById(id).orElseThrow(Exception::new);
+    }
+
+    /**
+     * Inserta el Establecimiento recibido como param
+     * @param establecimiento
+     * @return El establecimiento insertado
+     */
+    @Override
+    public Establecimiento insert(Establecimiento establecimiento) {
+        return establecimientoDAO.save(establecimiento);
     }
 }
