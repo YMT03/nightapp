@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Data
@@ -13,14 +14,17 @@ public class UbicacionDTO {
     private Long id;
 
     @NotBlank
+    @Size(max = 100)
     @JsonProperty("Direccion")
     private String direccion;
 
     @Size(max = 50)
+    @NotNull
     @JsonProperty("Longitud")
     private Double longitud;
 
     @Size(max = 50)
+    @NotNull
     @JsonProperty("Latitud")
     private Double latitud;
 

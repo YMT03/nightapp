@@ -1,5 +1,7 @@
 # CHANGELOG
 
+06/09/2019 -- Fix con ubicacion embebida en update/insert de Establecimientos. Cambios en las validaciones y tablas.
+
 06/09/2019 -- Se agrega Ubicacion a Establecimientos.
 
 06/09/2019 -- Modificacion en modelo de datos. Un Establecimiento ahora tiene descripcion.

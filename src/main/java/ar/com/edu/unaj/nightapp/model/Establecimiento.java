@@ -18,7 +18,7 @@ public class Establecimiento {
     private String nombre;
     @Column(length=2000)
     private String descripcion;
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     private Ubicacion ubicacion;
 
 }

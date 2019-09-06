@@ -2,12 +2,7 @@ package ar.com.edu.unaj.nightapp.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 
 @Entity(name = "ubicacion")
 @Data
@@ -16,10 +11,13 @@ public class Ubicacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+
+    @Column(length=100,nullable = false)
     private String direccion;
-    @NotNull
+
+    @Column(length=50,nullable = false)
     private Double longitud;
-    @NotNull
+
+    @Column(length=50,nullable = false)
     private Double latitud;
 }
