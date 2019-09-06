@@ -7,6 +7,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * UbicacionDTO. Clase utilizada para transferencia de datos. Se mappea con @Ubicacion
+ */
+
 @Data
 public class UbicacionDTO {
 
