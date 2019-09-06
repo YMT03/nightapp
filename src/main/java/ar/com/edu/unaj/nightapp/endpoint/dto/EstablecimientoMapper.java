@@ -18,6 +18,7 @@ public class EstablecimientoMapper {
      */
     public EstablecimientoDTO mapToDTO(Establecimiento establecimiento){
         EstablecimientoDTO establecimientoDTO = new EstablecimientoDTO();
+        establecimientoDTO.setId(establecimiento.getId());
         establecimientoDTO.setNombre(establecimiento.getNombre());
         return establecimientoDTO;
     }
