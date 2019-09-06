@@ -7,4 +7,5 @@ import java.util.List;
 public interface EstablecimientoService {
 
     List<Establecimiento> getAll();
+    void removeById(Long id) throws Exception;
 }

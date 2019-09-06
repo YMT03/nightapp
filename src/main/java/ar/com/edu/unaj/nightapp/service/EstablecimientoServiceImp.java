@@ -18,4 +18,9 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     public List<Establecimiento> getAll() {
         return establecimientoDAO.findAll();
     }
+
+    @Override
+    public void removeById(Long id) throws Exception {
+        establecimientoDAO.delete(establecimientoDAO.findById(id).orElseThrow(Exception::new));
+    }
 }
