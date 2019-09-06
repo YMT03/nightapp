@@ -18,12 +18,18 @@ public class EstablecimientoDTO {
 
     @JsonProperty("Id")
     private Long id;
+
     @JsonProperty("Nombre")
     @NotBlank
     @Size(max = 150)
     private String nombre;
+
     @JsonProperty("Descripcion")
     @Size(max = 2000)
     private String descripcion;
+
+    @JsonProperty("Ubicacion")
+    private UbicacionDTO ubicacionDTO;
+
 
 }

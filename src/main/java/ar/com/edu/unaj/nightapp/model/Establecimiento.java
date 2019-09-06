@@ -1,6 +1,5 @@
 package ar.com.edu.unaj.nightapp.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,5 +18,7 @@ public class Establecimiento {
     private String nombre;
     @Column(length=2000)
     private String descripcion;
+    @OneToOne
+    private Ubicacion ubicacion;
 
 }

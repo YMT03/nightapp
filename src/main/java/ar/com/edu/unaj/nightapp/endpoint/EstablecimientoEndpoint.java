@@ -1,7 +1,7 @@
 package ar.com.edu.unaj.nightapp.endpoint;
 
 import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
-import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoMapper;
+import ar.com.edu.unaj.nightapp.endpoint.mapper.EstablecimientoMapper;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -66,7 +66,7 @@ public class EstablecimientoEndpoint {
     @PostMapping
     @ResponseBody
     public ResponseEntity<EstablecimientoDTO> insert(@RequestBody @Valid EstablecimientoDTO establecimientoDTO){
-        return ResponseEntity.status(HttpStatus.CREATED).body(establecimientoMapper.mapToDTO(establecimientoService.insert(establecimientoMapper.toModel(establecimientoDTO))));
+        return ResponseEntity.status(HttpStatus.CREATED).body(establecimientoMapper.mapToDTO(establecimientoService.insert(establecimientoMapper.mapToBO(establecimientoDTO))));
     }
 
     /**
@@ -77,7 +77,7 @@ public class EstablecimientoEndpoint {
     @PutMapping
     @ResponseBody
     public ResponseEntity<EstablecimientoDTO> modify(@RequestBody @Valid EstablecimientoDTO establecimientoDTO) throws Exception {
-        return ResponseEntity.status(HttpStatus.OK).body(establecimientoMapper.mapToDTO(establecimientoService.update(establecimientoMapper.toModel(establecimientoDTO))));
+        return ResponseEntity.status(HttpStatus.OK).body(establecimientoMapper.mapToDTO(establecimientoService.update(establecimientoMapper.mapToBO(establecimientoDTO))));
     }
 
 
