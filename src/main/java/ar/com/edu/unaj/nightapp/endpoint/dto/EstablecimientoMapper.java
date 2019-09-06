@@ -20,6 +20,7 @@ public class EstablecimientoMapper {
         EstablecimientoDTO establecimientoDTO = new EstablecimientoDTO();
         establecimientoDTO.setId(establecimiento.getId());
         establecimientoDTO.setNombre(establecimiento.getNombre());
+        establecimientoDTO.setDescripcion(establecimiento.getDescripcion());
         return establecimientoDTO;
     }
 
@@ -33,6 +34,7 @@ public class EstablecimientoMapper {
         Establecimiento establecimiento = new Establecimiento();
         establecimiento.setId(establecimientoDTO.getId());
         establecimiento.setNombre(establecimientoDTO.getNombre());
+        establecimiento.setDescripcion(establecimientoDTO.getDescripcion());
         return establecimiento;
     }
 

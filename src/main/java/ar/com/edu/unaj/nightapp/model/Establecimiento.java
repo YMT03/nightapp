@@ -17,5 +17,7 @@ public class Establecimiento {
     private Long id;
     @Column(nullable=false,length=150)
     private String nombre;
+    @Column(length=2000)
+    private String descripcion;
 
 }

@@ -22,5 +22,8 @@ public class EstablecimientoDTO {
     @NotBlank
     @Size(max = 150)
     private String nombre;
+    @JsonProperty("Descripcion")
+    @Size(max = 2000)
+    private String descripcion;
 
 }

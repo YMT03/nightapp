@@ -2,5 +2,5 @@
 -- INSERTS
 
 -- ESTABLECIMIENTO
-INSERT INTO establecimiento VALUES(DEFAULT,'La Birra Bar');
-INSERT INTO establecimiento VALUES(DEFAULT,'Parrilla El Tano');
+INSERT INTO establecimiento VALUES(DEFAULT,'Birra Bar', NULL);
+INSERT INTO establecimiento VALUES(DEFAULT,'Parrilla El Tano', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id magna sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec commodo convallis iaculis. Proin porta metus id lacinia convallis. Mauris scelerisque neque et dapibus facilisis. Etiam eros dui, tristique nec faucibus quis, imperdiet rutrum dui. Phasellus ultricies metus eros, id volutpat mi sagittis finibus. Ut quis nunc vitae sem rutrum auctor. Phasellus sollicitudin ultrices tincidunt. Donec maximus nulla id tortor luctus, in efficitur velit ultrices. Donec ultricies turpis libero, quis interdum erat pulvinar in. Etiam metus justo, efficitur vel ornare at, vulputate nec lacus. Praesent vel fringilla mauris, ac mattis arcu. Mauris eu mattis nisi. Mauris risus velit, venenatis fermentum massa ac, ornare ullamcorper nibh. Aenean feugiat iaculis tincidunt.');

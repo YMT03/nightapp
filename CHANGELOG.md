@@ -1,5 +1,7 @@
 # CHANGELOG
 
+06/09/2019 -- Modificacion en modelo de datos. Un Establecimiento ahora tiene descripcion.
+
 06/09/2019 -- Discriminacion en errores a la hora de insertar/modificar. Ahora diferencia la razon del bad request en casos de por ej nombre muy largo o vacio en los Establecimientos.
 
 06/09/2019 -- Habilidad de modificar un Establecimiento. PUT method en /app/establecimientos. Con un EstablecimientoDTO en el Body Request.

@@ -44,7 +44,7 @@ public class EstablecimientoEndpoint {
     @ResponseBody
     public ResponseEntity removeById(@PathVariable Long id) throws Exception {
         establecimientoService.removeById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("");
     }
 
     /**
