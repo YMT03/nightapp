@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,7 +65,7 @@ public class EstablecimientoEndpoint {
      */
     @PostMapping
     @ResponseBody
-    public ResponseEntity<EstablecimientoDTO> insert(@RequestBody EstablecimientoDTO establecimientoDTO){
+    public ResponseEntity<EstablecimientoDTO> insert(@RequestBody @Valid EstablecimientoDTO establecimientoDTO){
         return ResponseEntity.status(HttpStatus.CREATED).body(establecimientoMapper.mapToDTO(establecimientoService.insert(establecimientoMapper.toModel(establecimientoDTO))));
     }
 
@@ -74,7 +76,7 @@ public class EstablecimientoEndpoint {
      */
     @PutMapping
     @ResponseBody
-    public ResponseEntity<EstablecimientoDTO> modify(@RequestBody EstablecimientoDTO establecimientoDTO) throws Exception {
+    public ResponseEntity<EstablecimientoDTO> modify(@RequestBody @Valid EstablecimientoDTO establecimientoDTO) throws Exception {
         return ResponseEntity.status(HttpStatus.OK).body(establecimientoMapper.mapToDTO(establecimientoService.update(establecimientoMapper.toModel(establecimientoDTO))));
     }
 

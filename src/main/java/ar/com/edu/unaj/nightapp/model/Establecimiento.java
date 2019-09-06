@@ -3,10 +3,7 @@ package ar.com.edu.unaj.nightapp.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Establecimiento (BO).
@@ -18,6 +15,7 @@ public class Establecimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable=false,length=150)
     private String nombre;
 
 }
