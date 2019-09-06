@@ -6,6 +6,7 @@ import ar.com.edu.unaj.nightapp.exception.EstablecimientoNotFoundException;
 import ar.com.edu.unaj.nightapp.model.Establecimiento;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +25,15 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
      */
     @Override
     public List<Establecimiento> getAll() {
-        return establecimientoDAO.findAll();
+        return (List<Establecimiento>) establecimientoDAO.findAll();
+    }
+
+    /**
+     * @return Lista paginada de Establecimientos de la DB
+     */
+    @Override
+    public List<Establecimiento> getAll(Integer offset, Integer size) {
+        return establecimientoDAO.findAll(PageRequest.of(offset, size)).getContent();
     }
 
     /**

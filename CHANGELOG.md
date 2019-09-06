@@ -1,5 +1,7 @@
 # CHANGELOG
 
+06/09/2019 -- El listado de Establecimientos ahora tiene Paginacion.
+
 06/09/2019 -- Nueva Excepcion particular para diferenciar HttpCode y mensaje asociado a la busqueda de un id inexistente.
 
 06/09/2019 -- Update Documentacion

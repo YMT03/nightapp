@@ -28,22 +28,26 @@ public class EstablecimientoEndpoint {
     private EstablecimientoMapper establecimientoMapper;
 
     /**
-     * @return Todos los establecimientos en DB. Sin paginacion ni ningun tipo de filtro. TODO Peligroso enviar todos con mucha cantidad de registros. A futuro -> Paginacion
+     * @param offset Desplazamiento inicial de paginas
+     * @param size Cantidad de rows por pagina
+     * @return Todos los establecimientos en DB. Con paginacion. Segi
      */
     @GetMapping
     @ResponseBody
-    public List<EstablecimientoDTO> getAll(){
-        return establecimientoService.getAll().stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
+    public List<EstablecimientoDTO> getAll(@RequestParam(defaultValue = "0") Integer offset,
+                                           @RequestParam(defaultValue = "20") Integer size){
+        size=size>50?50:size;
+        return establecimientoService.getAll(offset, size).stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
     }
 
     /**
      * @param id El id del Establecimiento a eliminar
-     * @return 200 OK Http Status en caso de que sea correcto. TODO A verificar el error por defecto
-     * @throws Exception Envia una Excepcion del tipo Exception TODO A modificar la Excepcion enviada. A futuro -> No Exception generica sino la particular con el mensaje y Http Status requerido.
+     * @return 200 OK Http Status en caso de que sea correcto. Sino 404
+     * @throws EstablecimientoNotFoundException Envia una Excepcion del tipo EstablecimientoNotFoundException 404 http code
      */
     @DeleteMapping("{id}")
     @ResponseBody
-    public ResponseEntity removeById(@PathVariable Long id) throws Exception {
+    public ResponseEntity removeById(@PathVariable Long id) throws EstablecimientoNotFoundException {
         establecimientoService.removeById(id);
         return ResponseEntity.ok("");
     }
@@ -73,7 +77,7 @@ public class EstablecimientoEndpoint {
     /**
      * @param establecimientoDTO
      * @return Establecimiento actualizado
-     * @throws EstablecimientoNotFoundException
+     * @throws EstablecimientoNotFoundException http code 404
      */
     @PutMapping
     @ResponseBody
