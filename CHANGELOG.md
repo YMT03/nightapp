@@ -1,5 +1,7 @@
 # CHANGELOG
 
+06/09/2019 -- Documentacion. Doc Comments agregados, a nivel clase y metodo.
+
 06/09/2019 -- GET method en /app/establecimientos/{id}. Obtiene un establecimiento concreto por {id}.
 
 06/09/2019 -- Componente Mapper encargado de los parseos de objetos modelo a objetos vista o viceversa

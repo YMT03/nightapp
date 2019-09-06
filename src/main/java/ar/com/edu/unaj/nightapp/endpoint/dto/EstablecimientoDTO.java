@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * EstablecimientoDTO. Clase utilizada para transferencia de datos. Se mappea con @Establecimiento
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
