@@ -1,5 +1,9 @@
 # CHANGELOG
 
+06/09/2019 -- Nueva Excepcion particular para diferenciar HttpCode y mensaje asociado a la busqueda de un id inexistente.
+
+06/09/2019 -- Update Documentacion
+
 06/09/2019 -- Fix con ubicacion embebida en update/insert de Establecimientos. Cambios en las validaciones y tablas.
 
 06/09/2019 -- Se agrega Ubicacion a Establecimientos.
