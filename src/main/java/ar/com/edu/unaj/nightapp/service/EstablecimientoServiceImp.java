@@ -55,4 +55,15 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     public Establecimiento insert(Establecimiento establecimiento) {
         return establecimientoDAO.save(establecimiento);
     }
+
+    /**
+     * @param establecimiento
+     * @return Establecimiento actualizado
+     * @throws Exception Tira excepcion si no existia un Establecimiento con ese Id. Se fuerza la Excepcion para evitar un INSERT. En tal caso la URL de peticion es otra.
+     */
+    @Override
+    public Establecimiento update(Establecimiento establecimiento) throws Exception {
+        establecimientoDAO.findById(establecimiento.getId()).orElseThrow(Exception::new);
+        return establecimientoDAO.save(establecimiento);
+    }
 }

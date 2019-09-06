@@ -1,5 +1,7 @@
 # CHANGELOG
 
+06/09/2019 -- Habilidad de modificar un Establecimiento. PUT method en /app/establecimientos. Con un EstablecimientoDTO en el Body Request.
+
 06/09/2019 -- Habilidad de agregar un Establecimiento. POST method en /app/establecimientos. Con un EstablecimientoDTO en el Body Request.
 
 06/09/2019 -- Fix. EstablecimientoDTO ahora muestra el Id.

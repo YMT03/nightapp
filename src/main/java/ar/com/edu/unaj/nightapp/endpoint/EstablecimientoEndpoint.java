@@ -67,6 +67,17 @@ public class EstablecimientoEndpoint {
         return ResponseEntity.status(HttpStatus.CREATED).body(establecimientoMapper.mapToDTO(establecimientoService.insert(establecimientoMapper.toModel(establecimientoDTO))));
     }
 
+    /**
+     * @param establecimientoDTO
+     * @return Establecimiento actualizado
+     * @throws Exception TODO Diferenciar. La Excepcion es para el caso de que no exista un establecimiento con ese ID. *No seria update sino insert. No se utilizara la misma entrada
+     */
+    @PutMapping
+    @ResponseBody
+    public ResponseEntity<EstablecimientoDTO> modify(@RequestBody EstablecimientoDTO establecimientoDTO) throws Exception {
+        return ResponseEntity.status(HttpStatus.OK).body(establecimientoMapper.mapToDTO(establecimientoService.update(establecimientoMapper.toModel(establecimientoDTO))));
+    }
+
 
 
 

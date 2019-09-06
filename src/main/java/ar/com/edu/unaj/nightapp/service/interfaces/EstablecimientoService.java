@@ -10,4 +10,5 @@ public interface EstablecimientoService {
     void removeById(Long id) throws Exception;
     Establecimiento getById(Long id) throws Exception;
     Establecimiento insert(Establecimiento establecimiento);
+    Establecimiento update(Establecimiento establecimiento) throws Exception;
 }
