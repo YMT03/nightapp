@@ -8,4 +8,5 @@ public interface EstablecimientoService {
 
     List<Establecimiento> getAll();
     void removeById(Long id) throws Exception;
+    Establecimiento getById(Long id) throws Exception;
 }

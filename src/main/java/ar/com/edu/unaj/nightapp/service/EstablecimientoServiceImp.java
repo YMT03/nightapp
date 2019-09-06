@@ -23,4 +23,9 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     public void removeById(Long id) throws Exception {
         establecimientoDAO.delete(establecimientoDAO.findById(id).orElseThrow(Exception::new));
     }
+
+    @Override
+    public Establecimiento getById(Long id) throws Exception {
+        return establecimientoDAO.findById(id).orElseThrow(Exception::new);
+    }
 }

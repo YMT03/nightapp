@@ -1,5 +1,9 @@
 # CHANGELOG
 
+06/09/2019 -- GET method en /app/establecimientos/{id}. Obtiene un establecimiento concreto por {id}.
+
+06/09/2019 -- Componente Mapper encargado de los parseos de objetos modelo a objetos vista o viceversa
+
 06/09/2019 -- DELETE method en /app/establecimientos/{id}. Elimina el establecimiento en cuestion.
 
 05/09/2019 -- Primer script sql ddl y dml. model/dao/endpoint/service asociados. GET method en /app/establecimientos. Retorna todos los Establecimientos de DB. Se elimino HomeEndpoint.java
