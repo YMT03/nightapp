@@ -26,4 +26,7 @@ public class Comentario {
     @JoinColumn(name = "establecimiento_id")
     private Establecimiento establecimiento;
 
+    @Column(name="establecimiento_id",insertable = false, updatable = false)
+    private Long establecimientoId;
+
 }
