@@ -37,3 +37,10 @@ CREATE TABLE comentarios
 	CONSTRAINT comentarios_fk1 FOREIGN KEY(establecimiento_id)
 		REFERENCES establecimientos(id) MATCH FULL ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=INNODB;
+
+CREATE TABLE categorias
+(
+	id BIGINT AUTO_INCREMENT,
+    nombre VARCHAR(50),
+    CONSTRAINT categorias_pk PRIMARY KEY(id)
+)ENGINE=INNODB;

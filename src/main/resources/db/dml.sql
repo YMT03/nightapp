@@ -15,3 +15,11 @@ INSERT INTO comentarios VALUES(DEFAULT, 1, 'No volveria', 'Tardaron y el ambient
 INSERT INTO comentarios VALUES(DEFAULT, 1, 'El mejor lugar para un paty', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
 INSERT INTO comentarios VALUES(DEFAULT, 1, 'Gran lugar', 'Buen lugar para ir con amigos');
 INSERT INTO comentarios VALUES(DEFAULT, 1, 'La cajera una maleducada', 'No volveria');
+
+INSERT INTO categorias VALUES(DEFAULT,'Vegano');
+INSERT INTO categorias VALUES(DEFAULT,'Vegetariano');
+INSERT INTO categorias VALUES(DEFAULT,'Celiaco');
+INSERT INTO categorias VALUES(DEFAULT,'Restaurante');
+INSERT INTO categorias VALUES(DEFAULT,'Pub');
+INSERT INTO categorias VALUES(DEFAULT,'Boliche');
+INSERT INTO categorias VALUES(DEFAULT,'Familiar');
