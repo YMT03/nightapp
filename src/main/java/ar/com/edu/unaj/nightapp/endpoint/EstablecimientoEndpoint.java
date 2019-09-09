@@ -35,9 +35,10 @@ public class EstablecimientoEndpoint {
     @GetMapping
     @ResponseBody
     public List<EstablecimientoDTO> getAll(@RequestParam(defaultValue = "0") Integer offset,
-                                           @RequestParam(defaultValue = "20") Integer size){
+                                           @RequestParam(defaultValue = "20") Integer size,
+                                           @RequestParam(defaultValue = "") String name){
         size=size>50?50:size;
-        return establecimientoService.getAll(offset, size).stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
+        return establecimientoService.getAllPaginatedByNameContaining(offset, size, name).stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
     }
 
     /**

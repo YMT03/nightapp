@@ -8,7 +8,7 @@ import java.util.List;
 public interface EstablecimientoService {
 
     List<Establecimiento> getAll();
-    List<Establecimiento> getAll(Integer offset, Integer size);
+    List<Establecimiento> getAllPaginatedByNameContaining(Integer offset, Integer size, String name);
     void removeById(Long id) throws EstablecimientoNotFoundException;
     Establecimiento getById(Long id) throws EstablecimientoNotFoundException;
     Establecimiento insert(Establecimiento establecimiento);

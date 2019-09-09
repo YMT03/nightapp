@@ -7,6 +7,7 @@ import ar.com.edu.unaj.nightapp.model.Establecimiento;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,11 +30,12 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     }
 
     /**
-     * @return Lista paginada de Establecimientos de la DB
+     * @return Lista paginada de Establecimientos de la DB. Filtrando por nombre
      */
     @Override
-    public List<Establecimiento> getAll(Integer offset, Integer size) {
-        return establecimientoDAO.findAll(PageRequest.of(offset, size)).getContent();
+    public List<Establecimiento> getAllPaginatedByNameContaining(Integer offset, Integer size, String name) {
+        Pageable pageable = PageRequest.of(offset,size);
+        return establecimientoDAO.findByNombreContaining(name, pageable);
     }
 
     /**

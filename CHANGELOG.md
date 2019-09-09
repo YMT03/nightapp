@@ -1,5 +1,7 @@
 # CHANGELOG
 
+09/09/2019 -- Filtrado de Establecimientos por Nombre.
+
 09/09/2019 -- CRUD Categoria.
 
 09/09/2019 -- Nuevo BO. Categoria. ddl, dml, endpoint, service, model. get All method.
