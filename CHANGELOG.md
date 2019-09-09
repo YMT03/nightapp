@@ -1,5 +1,7 @@
 # CHANGELOG
 
+09/09/2019 -- Excepcion correspondiente cuando no existe el Establecimiento asociado
+
 09/09/2019 -- Posibilidad de ver todos los comentarios asociados a un establecimiento y paginados.
 
 06/09/2019 -- Modificacion en DB. DML y DDL.
