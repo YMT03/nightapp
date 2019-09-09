@@ -1,5 +1,7 @@
 # CHANGELOG
 
+09/09/2019 -- Posibilidad de eliminar Comentarios asociados a un Establecimiento.
+
 09/09/2019 -- Posibilidad de agregar Comentarios asociados a un Establecimiento.
 
 09/09/2019 -- Excepcion correspondiente cuando no existe el Establecimiento asociado

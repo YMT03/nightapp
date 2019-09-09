@@ -28,7 +28,7 @@ public class ComentarioServiceImp implements ComentarioService {
 
     @Override
     public void removeById(Long id) throws ComentarioNotFoundException {
-        //TODO
+        comentarioDAO.delete(comentarioDAO.findById(id).orElseThrow(ComentarioNotFoundException::new));
     }
 
     @Override
@@ -39,5 +39,10 @@ public class ComentarioServiceImp implements ComentarioService {
     @Override
     public Comentario update(Comentario comentario) throws ComentarioNotFoundException {
         return null;//TODO
+    }
+
+    @Override
+    public Comentario getById(Long id) throws ComentarioNotFoundException {
+        return comentarioDAO.findById(id).orElseThrow(ComentarioNotFoundException::new);
     }
 }

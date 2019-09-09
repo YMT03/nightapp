@@ -11,4 +11,5 @@ public interface ComentarioService {
     void removeById(Long id) throws ComentarioNotFoundException;
     Comentario insert(Comentario comentario);
     Comentario update(Comentario comentario) throws ComentarioNotFoundException;
+    Comentario getById(Long id) throws ComentarioNotFoundException;
 }
