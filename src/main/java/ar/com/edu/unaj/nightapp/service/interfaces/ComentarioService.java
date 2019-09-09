@@ -8,8 +8,8 @@ import java.util.List;
 public interface ComentarioService {
 
     List<Comentario> getAll(Long establecimientoId, Integer offset, Integer size);
-    void removeById(Long id) throws ComentarioNotFoundException;
+    void removeById(Long establecimientoId, Long comentarioId) throws ComentarioNotFoundException;
     Comentario insert(Comentario comentario);
     Comentario update(Comentario comentario) throws ComentarioNotFoundException;
-    Comentario getById(Long id) throws ComentarioNotFoundException;
+    Comentario getById(Long establecimientoId, Long comentarioId) throws ComentarioNotFoundException;
 }

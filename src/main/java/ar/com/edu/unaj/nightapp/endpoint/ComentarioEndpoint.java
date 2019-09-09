@@ -29,13 +29,8 @@ public class ComentarioEndpoint {
     private EstablecimientoService establecimientoService;
 
     @GetMapping("{comentarioId}")
-    public ResponseEntity getById(@PathVariable Long comentarioId, @PathVariable Long id){
-        Establecimiento establecimiento = establecimientoService.getById(id);
-        Comentario comentario = comentarioService.getById(comentarioId);
-        if(establecimiento.getComentarios().contains(comentario)){
-            return ResponseEntity.ok(comentarioMapper.mapToDTO(comentario));
-        }
-        throw new ComentarioNotFoundException();
+    public ResponseEntity<ComentarioDTO> getById(@PathVariable Long comentarioId, @PathVariable Long id){
+        return ResponseEntity.ok(comentarioMapper.mapToDTO(comentarioService.getById(id, comentarioId)));
     }
 
     @GetMapping
@@ -57,13 +52,8 @@ public class ComentarioEndpoint {
 
     @DeleteMapping("{comentarioId}")
     public ResponseEntity removeById(@PathVariable Long comentarioId, @PathVariable Long id){
-        Establecimiento establecimiento = establecimientoService.getById(id);
-        Comentario comentario = comentarioService.getById(comentarioId);
-        if(establecimiento.getComentarios().contains(comentario)){
-            comentarioService.removeById(comentarioId);
-            return ResponseEntity.ok("");
-        }
-        throw new ComentarioNotFoundException();
+        comentarioService.removeById(id, comentarioId);
+        return ResponseEntity.ok("");
     }
 
 }

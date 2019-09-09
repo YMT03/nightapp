@@ -13,4 +13,7 @@ public interface ComentarioDAO extends PagingAndSortingRepository<Comentario, Lo
 
     @Query(value = "SELECT * FROM Comentarios c WHERE c.establecimiento_id=?1",nativeQuery = true)
     List<Comentario> getAllByEstablecimientoId(Long establecimientoId, Pageable pageable);
+
+    @Query(value = "SELECT * FROM Comentarios c WHERE c.establecimiento_id=?1 AND c.id=?2",nativeQuery = true)
+    Comentario getById(Long establecimientoId, Long ComentarioId);
 }
