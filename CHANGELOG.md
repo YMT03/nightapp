@@ -1,5 +1,7 @@
 # CHANGELOG
 
+09/09/2019 -- CRUD Categoria.
+
 09/09/2019 -- Nuevo BO. Categoria. ddl, dml, endpoint, service, model. get All method.
 
 09/09/2019 -- Refactor en Comentario-> getById. Codigo mas performante, se verifica la relacion con el establecimiento en Query.
