@@ -1,5 +1,7 @@
 # CHANGELOG
 
+09/09/2019 -- Posibilidad de acceder a un Comentarios especifico asociado a un Establecimiento.
+
 09/09/2019 -- Posibilidad de eliminar Comentarios asociados a un Establecimiento.
 
 09/09/2019 -- Posibilidad de agregar Comentarios asociados a un Establecimiento.

@@ -28,6 +28,16 @@ public class ComentarioEndpoint {
     @Autowired
     private EstablecimientoService establecimientoService;
 
+    @GetMapping("{comentarioId}")
+    public ResponseEntity getById(@PathVariable Long comentarioId, @PathVariable Long id){
+        Establecimiento establecimiento = establecimientoService.getById(id);
+        Comentario comentario = comentarioService.getById(comentarioId);
+        if(establecimiento.getComentarios().contains(comentario)){
+            return ResponseEntity.ok(comentarioMapper.mapToDTO(comentario));
+        }
+        throw new ComentarioNotFoundException();
+    }
+
     @GetMapping
     public List<ComentarioDTO> getAll(@RequestParam(defaultValue = "0") Integer offset,
                                       @RequestParam(defaultValue = "10") Integer size,
@@ -54,7 +64,6 @@ public class ComentarioEndpoint {
             return ResponseEntity.ok("");
         }
         throw new ComentarioNotFoundException();
-
     }
 
 }
