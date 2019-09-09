@@ -2,11 +2,14 @@ package ar.com.edu.unaj.nightapp.endpoint;
 
 import ar.com.edu.unaj.nightapp.endpoint.dto.ComentarioDTO;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.ComentarioMapper;
+import ar.com.edu.unaj.nightapp.model.Comentario;
+import ar.com.edu.unaj.nightapp.model.Establecimiento;
 import ar.com.edu.unaj.nightapp.service.interfaces.ComentarioService;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +33,14 @@ public class ComentarioEndpoint {
         establecimientoService.getById(id);//Throw Exception si no existe
         size=size>30?30:size;
         return comentarioService.getAll(id, offset, size).stream().map(x->comentarioMapper.mapToDTO(x)).collect(Collectors.toList());
+    }
+
+    @PostMapping
+    public ComentarioDTO insert(@RequestBody @Valid ComentarioDTO comentarioDTO, @PathVariable Long id){
+        Establecimiento establecimiento = establecimientoService.getById(id); //Si no existe Exception
+        Comentario comentario = comentarioMapper.mapToBO(comentarioDTO);
+        comentario.setEstablecimiento(establecimiento);
+        return comentarioMapper.mapToDTO(comentarioService.insert(comentario));
     }
 
 }

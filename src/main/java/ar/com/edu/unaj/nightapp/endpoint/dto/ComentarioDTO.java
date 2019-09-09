@@ -20,11 +20,13 @@ public class ComentarioDTO {
     private Long id;
 
     @JsonProperty("Titulo")
+    @Size(max = 70)
     @NotNull
     private String titulo;
 
     @JsonProperty("Descripcion")
     @Size(max = 2000)
+    @NotNull
     private String descripcion;
 
 

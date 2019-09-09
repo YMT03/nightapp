@@ -32,12 +32,12 @@ public class ComentarioServiceImp implements ComentarioService {
     }
 
     @Override
-    public Comentario insert(Comentario establecimiento) {
-        return null;//TODO
+    public Comentario insert(Comentario comentario) {
+        return comentarioDAO.save(comentario);
     }
 
     @Override
-    public Comentario update(Comentario establecimiento) throws ComentarioNotFoundException {
+    public Comentario update(Comentario comentario) throws ComentarioNotFoundException {
         return null;//TODO
     }
 }
