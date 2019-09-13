@@ -5,9 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- * Ubicacion (BO).
+ * Comentario (BO).
  */
-
 @Entity(name = "comentarios")
 @Data
 public class Comentario {

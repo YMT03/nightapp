@@ -1,5 +1,7 @@
 # CHANGELOG
 
+13/09/2019 -- Update Documentacion.
+
 09/09/2019 -- Filtrado de Establecimientos por Nombre.
 
 09/09/2019 -- CRUD Categoria.

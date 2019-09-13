@@ -28,9 +28,10 @@ public class EstablecimientoEndpoint {
     private EstablecimientoMapper establecimientoMapper;
 
     /**
-     * @param offset Desplazamiento inicial de paginas
-     * @param size Cantidad de rows por pagina
-     * @return Todos los establecimientos en DB. Con paginacion. Segi
+     * @param offset Desplazamiento inicial de paginas. Por default arranca en posicion 0.
+     * @param size Cantidad de rows por pagina. Por default son 20 objectos por pagina. Limitado a un maximo de 50.
+     * @param name   Para filtrar por nombre
+     * @return Todos los establecimientos en DB. Con paginacion y filtrados por nombre en caso de
      */
     @GetMapping
     @ResponseBody

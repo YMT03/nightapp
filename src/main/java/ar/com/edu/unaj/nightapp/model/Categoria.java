@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * Categoria (BO).
+ */
 @Entity(name = "categorias")
 @Data
 public class Categoria {

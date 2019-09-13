@@ -1,5 +1,9 @@
 package ar.com.edu.unaj.nightapp.common;
 
+/**
+ * Clase de Mensajes. Para mantener centralizado el uso de los mismos.
+ * En un futuro podria estar en DB.
+ */
 public class Messages {
 
     //Exceptions

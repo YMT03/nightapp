@@ -41,7 +41,7 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     /**
      * Elimina el Establecimiento con el id pasado como parametro.
      * @param id id del Establecimiento a eliminar
-     * @throws Exception En caso de no existir un Establecimiento de id {id}. TODO Pasar Exception a Exception particular para manejarla correctamente
+     * @throws EstablecimientoNotFoundException Cuando no existe
      */
     @Override
     public void removeById(Long id) throws EstablecimientoNotFoundException {
@@ -51,7 +51,7 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     /**
      * @param id id del Establecimiento a obtener
      * @return Establecimiento en cuestion
-     * @throws Exception En caso de no existir un Establecimiento de id {id}. TODO Pasar Exception a Exception particular para manejarla correctamente
+     * @throws EstablecimientoNotFoundException En caso de no existir un Establecimiento de id {id}.
      */
     @Override
     public Establecimiento getById(Long id) throws EstablecimientoNotFoundException {
@@ -71,7 +71,7 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     /**
      * @param establecimiento
      * @return Establecimiento actualizado
-     * @throws Exception Tira excepcion si no existia un Establecimiento con ese Id. Se fuerza la Excepcion para evitar un INSERT. En tal caso la URL de peticion es otra.
+     * @throws EstablecimientoNotFoundException Tira excepcion si no existia un Establecimiento con ese Id. Se fuerza la Excepcion para evitar un INSERT. En tal caso la URL de peticion es otra.
      */
     @Override
     public Establecimiento update(Establecimiento establecimiento) throws EstablecimientoNotFoundException {
