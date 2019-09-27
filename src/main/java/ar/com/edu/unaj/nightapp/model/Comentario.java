@@ -1,6 +1,7 @@
 package ar.com.edu.unaj.nightapp.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -22,6 +23,7 @@ public class Comentario {
     private String titulo;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
     @JoinColumn(name = "ESTABLECIMIENTO_ID")
     private Establecimiento establecimiento;
 

@@ -31,12 +31,11 @@ public class EstablecimientoDTO {
     @Size(max = 2000)
     private String descripcion;
 
-    @JsonProperty("Ubicacion")
-    @NotNull
-    private UbicacionDTO ubicacionDTO;
-
     @JsonProperty("Categorias")
     private List<CategoriaDTO> categorias;
+
+    @JsonProperty("Activo")
+    private Boolean activo;
 
 
 }

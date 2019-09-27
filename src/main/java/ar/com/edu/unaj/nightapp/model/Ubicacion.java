@@ -18,6 +18,10 @@ public class Ubicacion {
     @Column(length=100,nullable = false)
     private String direccion;
 
+    @ManyToOne
+    @JoinColumn(name = "CIUDAD_ID")
+    private Ciudad ciudad;
+
     @Column(length=50,nullable = false)
     private Double longitud;
 
