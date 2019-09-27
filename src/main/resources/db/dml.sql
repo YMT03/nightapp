@@ -1,25 +1,133 @@
-INSERT INTO ubicaciones VALUES(DEFAULT,'Don Anselmo Aieta 1083, 1103 CABA', -34.6205001,-58.369814);
-INSERT INTO ubicaciones VALUES(DEFAULT,'Gral. Güemes 567, B1870 Crucecita, Buenos Aires', -34.672983,-58.3620329);
+INSERT INTO ROLES VALUES(DEFAULT,'ADMINISTRADOR');
+INSERT INTO ROLES VALUES(DEFAULT,'CLIENTE');
+INSERT INTO ROLES VALUES(DEFAULT,'DUEÑO');
 
-INSERT INTO establecimientos VALUES(DEFAULT,'Birra Bar', NULL,1);
-INSERT INTO establecimientos VALUES(DEFAULT,'Parrilla El Tano', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id magna sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec commodo convallis iaculis. Proin porta metus id lacinia convallis. Mauris scelerisque neque et dapibus facilisis. Etiam eros dui, tristique nec faucibus quis, imperdiet rutrum dui. Phasellus ultricies metus eros, id volutpat mi sagittis finibus. Ut quis nunc vitae sem rutrum auctor. Phasellus sollicitudin ultrices tincidunt. Donec maximus nulla id tortor luctus, in efficitur velit ultrices. Donec ultricies turpis libero, quis interdum erat pulvinar in. Etiam metus justo, efficitur vel ornare at, vulputate nec lacus. Praesent vel fringilla mauris, ac mattis arcu. Mauris eu mattis nisi. Mauris risus velit, venenatis fermentum massa ac, ornare ullamcorper nibh. Aenean feugiat iaculis tincidunt.',2);
 
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'El mejor lugar para un viernes a la noche', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'Gran lugar', 'Buen lugar para ir con amigos');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'La cajera una maleducada', 'No volveria');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'Me gusto', 'Bien');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'Mejor que McDonalds', 'Si vas una vez no volves nunca mas a McDonalds');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'OKOK', 'OKOK BIEN SESESESE');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'Lugarrrr unicooooo', 'Re va.. una LOCURAAAAAA');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'No volveria', 'Tardaron y el ambiente deja bastante que desear. La hamburguesa fria, aunque era rica');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'El mejor lugar para un paty', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'Gran lugar', 'Buen lugar para ir con amigos');
-INSERT INTO comentarios VALUES(DEFAULT, 1, 'La cajera una maleducada', 'No volveria');
+INSERT INTO PERSONAS VALUES(DEFAULT, 'Juan','Perez','38383838','juan@hotmail.com',0,'Crisologo Larralde 2020','20383838386');
+INSERT INTO PERSONAS VALUES(DEFAULT, 'Maria','Teresa','12121212','mariateresa@gmail.com',1,'Av. San Juan 150', NULL);
+INSERT INTO PERSONAS VALUES(DEFAULT, 'FEDE','MARTINEZ','4184858','guti.nas@gmail.com',1,'Supisiche 1500', NULL);
+INSERT INTO PERSONAS VALUES(DEFAULT, 'Natalia','Fernandez','2683849','nati.nati@noreply.com',0,'Crisologo Larralde 2020', NULL);
+INSERT INTO PERSONAS VALUES(DEFAULT, 'Nicolas','Fernandez','3483859','admin@nightapp.com',1,'Av. Cordero 6690', NULL);
 
-INSERT INTO categorias VALUES(DEFAULT,'Vegano');
-INSERT INTO categorias VALUES(DEFAULT,'Vegetariano');
-INSERT INTO categorias VALUES(DEFAULT,'Celiaco');
-INSERT INTO categorias VALUES(DEFAULT,'Restaurante');
-INSERT INTO categorias VALUES(DEFAULT,'Pub');
-INSERT INTO categorias VALUES(DEFAULT,'Boliche');
-INSERT INTO categorias VALUES(DEFAULT,'Familiar');
+
+INSERT INTO USUARIOS VALUES(DEFAULT, 'owner', MD5('owner'),1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'mariateresa', MD5('teresa99'),2);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'fede', MD5('fede'),3);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'natifernandez', MD5('nati'),4);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'admin', MD5('admin'),5);
+
+
+INSERT INTO USUARIOS_ROLES VALUES(1,1);
+INSERT INTO USUARIOS_ROLES VALUES(1,2);
+INSERT INTO USUARIOS_ROLES VALUES(2,2);
+INSERT INTO USUARIOS_ROLES VALUES(3,2);
+INSERT INTO USUARIOS_ROLES VALUES(4,2);
+INSERT INTO USUARIOS_ROLES VALUES(5,1);
+INSERT INTO USUARIOS_ROLES VALUES(5,2);
+INSERT INTO USUARIOS_ROLES VALUES(5,3);
+
+
+INSERT INTO LOCALIDADES VALUES(DEFAULT, 'Quilmes');
+INSERT INTO LOCALIDADES VALUES(DEFAULT, 'Avellaneda');
+INSERT INTO LOCALIDADES VALUES(DEFAULT, 'Lanus');
+
+
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Bernal' ,1);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Don Bosco' ,1);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Wilde' ,2);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Sarandi' ,2);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Avellaneda' ,2);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Quilmes' ,1);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Lanus' ,3);
+INSERT INTO CIUDADES VALUES(DEFAULT, 'Gerli' ,3);
+
+
+-- FALTA ACTUALIZAR LONGITUD Y LATITUD
+INSERT INTO UBICACIONES VALUES(DEFAULT,'Gral. Güemes 567',5, -34.672983,-58.3620329);
+INSERT INTO UBICACIONES VALUES(DEFAULT,'9 de Julio 11',1, -34.672983,-58.3620329);
+INSERT INTO UBICACIONES VALUES(DEFAULT,'Av. Bartolomé Mitre 6235',3, -34.672983,-58.3620329);
+
+
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Parrilla El Tano', 'La parrilla tradicional de Avellaneda',1,1);
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'La Roca',NULL,2,1);
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Vinilo',NULL,3,1);
+
+
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un viernes a la noche', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Gran lugar', 'Buen lugar para ir con amigos');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,4, 'Me gusto', 'Bien');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Mejor que McDonalds', 'Si vas una vez no volves nunca mas a McDonalds');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,3, 'OKOK', 'OKOK BIEN SESESESE');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Lugarrrr unicooooo', 'Re va.. una LOCURAAAAAA');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,2, 'No volveria', 'Tardaron y el ambiente deja bastante que desear. La hamburguesa fria, aunque era rica');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un paty', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Gran lugar', 'Buen lugar para ir con amigos');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,1, 'El barman un maleducado', 'No volveria');
+
+
+INSERT INTO MENUS VALUES (DEFAULT, 'Vegano');
+INSERT INTO MENUS VALUES (DEFAULT, 'Vegetariano');
+INSERT INTO MENUS VALUES (DEFAULT, 'Celiaco');
+INSERT INTO MENUS VALUES (DEFAULT, 'Comida japonesa');
+INSERT INTO MENUS VALUES (DEFAULT, 'Comida internacional');
+INSERT INTO MENUS VALUES (DEFAULT, 'Hambuerguesa');
+INSERT INTO MENUS VALUES (DEFAULT, 'Pizza');
+INSERT INTO MENUS VALUES (DEFAULT, 'Pasta');
+INSERT INTO MENUS VALUES (DEFAULT, 'Parrilla');
+
+
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Wifi');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Television');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Sector fumador');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Pool');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Happy Hour');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Jenga');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Juegos de mesa');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Guardarropa');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Aire acondicionado');
+INSERT INTO SERVICIOS VALUES(DEFAULT, 'Cerveza artesanal');
+
+
+INSERT INTO CATEGORIAS VALUES(DEFAULT,'Bar');
+INSERT INTO CATEGORIAS VALUES(DEFAULT,'Boliche');
+INSERT INTO CATEGORIAS VALUES(DEFAULT,'Restaurant');
+
+
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(1,2);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(1,6);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(1,7);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(1,8);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(1,9);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(2,6);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(2,7);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(3,1);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(3,2);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(3,3);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(3,4);
+INSERT INTO ESTABLECIMIENTOS_MENUS VALUES(3,5);
+
+
+INSERT INTO ESTABLECIMIENTOS_CATEGORIAS VALUES(1,3);
+INSERT INTO ESTABLECIMIENTOS_CATEGORIAS VALUES(2,1);
+INSERT INTO ESTABLECIMIENTOS_CATEGORIAS VALUES(2,2);
+INSERT INTO ESTABLECIMIENTOS_CATEGORIAS VALUES(3,1);
+
+
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(1,1);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(1,2);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(1,9);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(2,3);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(2,5);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(2,6);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(2,8);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,1);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,2);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,3);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,4);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,5);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,6);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,7);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,8);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,9);
+INSERT INTO ESTABLECIMIENTOS_SERVICIOS VALUES(3,10);
+

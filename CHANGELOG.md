@@ -1,5 +1,17 @@
 # CHANGELOG
 
+27/09/2019 -- Se agrega Localidad. CRUD.
+
+27/09/2019 -- Se agrega relacion categorias-establecimientos
+
+26/09/2019 -- Se agrega posibilidad de almacenar habilitaciones
+
+25/09/2019 -- Inserts DB
+
+22/09/2019 -- Modificaciones en DB
+
+16/09/2019 -- Modificaciones en DB
+
 13/09/2019 -- Update Documentacion.
 
 09/09/2019 -- Filtrado de Establecimientos por Nombre.

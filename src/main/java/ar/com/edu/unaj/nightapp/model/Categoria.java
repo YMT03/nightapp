@@ -3,11 +3,12 @@ package ar.com.edu.unaj.nightapp.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Categoria (BO).
  */
-@Entity(name = "categorias")
+@Entity(name = "CATEGORIAS")
 @Data
 public class Categoria {
 
@@ -17,5 +18,7 @@ public class Categoria {
 
     @Column(nullable = false, length = 50)
     private String nombre;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "categorias")
+    private List<Establecimiento> establecimientos;
 
 }
