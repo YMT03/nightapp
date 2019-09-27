@@ -1,5 +1,7 @@
 # CHANGELOG
 
+27/09/2019 -- Se agrega Ciudad. CRUD.
+
 27/09/2019 -- Se agrega Localidad. CRUD.
 
 27/09/2019 -- Se agrega relacion categorias-establecimientos
