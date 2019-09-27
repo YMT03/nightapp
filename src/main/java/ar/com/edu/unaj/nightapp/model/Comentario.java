@@ -1,13 +1,14 @@
 package ar.com.edu.unaj.nightapp.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 /**
  * Comentario (BO).
  */
-@Entity(name = "comentarios")
+@Entity(name = "COMENTARIOS")
 @Data
 public class Comentario {
 
@@ -22,10 +23,11 @@ public class Comentario {
     private String titulo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "establecimiento_id")
+    @ToString.Exclude
+    @JoinColumn(name = "ESTABLECIMIENTO_ID")
     private Establecimiento establecimiento;
 
-    @Column(name="establecimiento_id",insertable = false, updatable = false)
+    @Column(name="ESTABLECIMIENTO_ID",insertable = false, updatable = false)
     private Long establecimientoId;
 
 }

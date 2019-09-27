@@ -6,12 +6,16 @@ import ar.com.edu.unaj.nightapp.model.Ubicacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.stream.Collectors;
+
 /**
  * Componente encargado de la logica de mappeo entre Objeto @Establecimiento y @EstablecimientoDTO
  */
 @Component
 public class EstablecimientoMapper implements Mapper<Establecimiento,EstablecimientoDTO> {
 
+    @Autowired
+    private CategoriaMapper categoriaMapper;
 
     @Autowired
     private UbicacionMapper ubicacionMapper;
@@ -26,8 +30,9 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimientoDTO.setId(establecimiento.getId());
         establecimientoDTO.setNombre(establecimiento.getNombre());
         establecimientoDTO.setDescripcion(establecimiento.getDescripcion());
-        if(establecimiento.getUbicacion()!=null)
-            establecimientoDTO.setUbicacionDTO(ubicacionMapper.mapToDTO(establecimiento.getUbicacion()));
+        establecimientoDTO.setActivo(establecimiento.getActivo());
+        if(establecimiento.getCategorias()!=null && !establecimiento.getCategorias().isEmpty())
+        establecimientoDTO.setCategorias(establecimiento.getCategorias().stream().map(x->categoriaMapper.mapToDTO(x)).collect(Collectors.toList()));
         return establecimientoDTO;
     }
 
@@ -44,11 +49,17 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimiento.setId(establecimientoDTO.getId());
         establecimiento.setNombre(establecimientoDTO.getNombre());
         establecimiento.setDescripcion(establecimientoDTO.getDescripcion());
-        if(establecimientoDTO.getUbicacionDTO()!=null)
-            establecimiento.setUbicacion(ubicacionMapper.mapToBO(establecimientoDTO.getUbicacionDTO()));
+        establecimiento.setActivo(establecimientoDTO.getActivo());
         return establecimiento;
     }
 
-
-
+    @Override
+    public EstablecimientoDTO mapToDTO(Establecimiento establecimiento, boolean eager) {
+        EstablecimientoDTO establecimientoDTO = new EstablecimientoDTO();
+        establecimientoDTO.setId(establecimiento.getId());
+        establecimientoDTO.setNombre(establecimiento.getNombre());
+        establecimientoDTO.setDescripcion(establecimiento.getDescripcion());
+        establecimientoDTO.setActivo(establecimiento.getActivo());
+        return establecimientoDTO;
+    }
 }

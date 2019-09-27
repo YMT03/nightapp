@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * EstablecimientoDTO. Clase utilizada para transferencia de datos. Se mappea con @Establecimiento
@@ -30,9 +31,11 @@ public class EstablecimientoDTO {
     @Size(max = 2000)
     private String descripcion;
 
-    @JsonProperty("Ubicacion")
-    @NotNull
-    private UbicacionDTO ubicacionDTO;
+    @JsonProperty("Categorias")
+    private List<CategoriaDTO> categorias;
+
+    @JsonProperty("Activo")
+    private Boolean activo;
 
 
 }
