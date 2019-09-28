@@ -12,6 +12,7 @@ public class Messages {
     public static final String LOCALIDAD_NOT_FOUND_EXCEPTION ="La Localidad solicitado no existe";
     public static final String CATEGORIA_NOT_FOUND_EXCEPTION ="La Categoria solicitada no existe";
     public static final String CIUDAD_NOT_FOUND_EXCEPTION ="La Ciudad solicitada no existe";
+    public static final String SERVICIO_NOT_FOUND_EXCEPTION ="El Servicio solicitada no existe";
 
     //Validations
     //TODO

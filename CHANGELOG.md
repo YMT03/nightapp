@@ -1,5 +1,7 @@
 # CHANGELOG
 
+28/09/2019 -- Se agrega Servicio. CRUD. Y algunos inserts.
+
 27/09/2019 -- Se permiten conexiones desde protocolos no http. Por cuestiones de integracion
 
 27/09/2019 -- Actualizacion en Entidades y sus relaciones.

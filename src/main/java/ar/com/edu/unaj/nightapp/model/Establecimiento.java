@@ -31,6 +31,10 @@ public class Establecimiento {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="ESTABLECIMIENTOS_CATEGORIAS", joinColumns = @JoinColumn(name = "ESTABLECIMIENTO_ID"), inverseJoinColumns = @JoinColumn(name = "CATEGORIA_ID"))
     private List<Categoria> categorias;
+    @ToString.Exclude
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name="ESTABLECIMIENTOS_SERVICIOS", joinColumns = @JoinColumn(name = "ESTABLECIMIENTO_ID"), inverseJoinColumns = @JoinColumn(name = "SERVICIO_ID"))
+    private List<Servicio> servicios;
 
 
 }
