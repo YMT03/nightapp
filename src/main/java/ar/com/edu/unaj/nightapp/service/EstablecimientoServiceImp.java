@@ -2,7 +2,10 @@ package ar.com.edu.unaj.nightapp.service;
 
 import ar.com.edu.unaj.nightapp.dao.EstablecimientoDAO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
+import ar.com.edu.unaj.nightapp.endpoint.dto.FiltroDTO;
+import ar.com.edu.unaj.nightapp.endpoint.mapper.CategoriaMapper;
 import ar.com.edu.unaj.nightapp.exception.EstablecimientoNotFoundException;
+import ar.com.edu.unaj.nightapp.model.Categoria;
 import ar.com.edu.unaj.nightapp.model.Establecimiento;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Servicio encargado de la logica respecto a Establecimiento
@@ -20,6 +26,8 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
 
     @Autowired
     private EstablecimientoDAO establecimientoDAO;
+    @Autowired
+    private CategoriaMapper categoriaMapper;//TODO SACAR
 
     /**
      * @return Lista completa de Establecimientos en la DB
@@ -77,5 +85,11 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     public Establecimiento update(Establecimiento establecimiento) throws EstablecimientoNotFoundException {
         establecimientoDAO.findById(establecimiento.getId()).orElseThrow(EstablecimientoNotFoundException::new);
         return establecimientoDAO.save(establecimiento);
+    }
+
+    @Override
+    public List<Establecimiento> getAllPaginatedAndFiltered(Integer offset, Integer size, FiltroDTO filtroDTO) {
+        Pageable pageable = PageRequest.of(offset,size);
+        return establecimientoDAO.getPaginatedAndFiltered(filtroDTO.getCategorias(),filtroDTO.getServicios(),filtroDTO.getMenus(), pageable);
     }
 }

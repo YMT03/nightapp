@@ -1,6 +1,7 @@
 package ar.com.edu.unaj.nightapp.endpoint;
 
 import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
+import ar.com.edu.unaj.nightapp.endpoint.dto.FiltroDTO;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.EstablecimientoMapper;
 import ar.com.edu.unaj.nightapp.exception.EstablecimientoNotFoundException;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
@@ -87,6 +88,13 @@ public class EstablecimientoEndpoint {
         return ResponseEntity.status(HttpStatus.OK).body(establecimientoMapper.mapToDTO(establecimientoService.update(establecimientoMapper.mapToBO(establecimientoDTO))));
     }
 
+    @PostMapping("/filtrados")
+    @ResponseBody
+    public List<EstablecimientoDTO> insert(@RequestBody @Valid FiltroDTO filtroDTO, @RequestParam(defaultValue = "0") Integer offset,
+                                            @RequestParam(defaultValue = "20") Integer size){
+        size=size>50?50:size;
+        return establecimientoService.getAllPaginatedAndFiltered(offset,size,filtroDTO).stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
+    }
 
 
 
