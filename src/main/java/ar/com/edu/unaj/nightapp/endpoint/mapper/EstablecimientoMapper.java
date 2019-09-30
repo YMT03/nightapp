@@ -33,6 +33,7 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimientoDTO.setActivo(establecimiento.getActivo());
         if(establecimiento.getCategorias()!=null && !establecimiento.getCategorias().isEmpty())
         establecimientoDTO.setCategorias(establecimiento.getCategorias().stream().map(x->categoriaMapper.mapToDTO(x)).collect(Collectors.toList()));
+        establecimientoDTO.setRating(establecimiento.getRating());
         return establecimientoDTO;
     }
 
@@ -50,6 +51,7 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimiento.setNombre(establecimientoDTO.getNombre());
         establecimiento.setDescripcion(establecimientoDTO.getDescripcion());
         establecimiento.setActivo(establecimientoDTO.getActivo());
+        establecimiento.setRating(establecimientoDTO.getRating());
         return establecimiento;
     }
 
@@ -60,6 +62,7 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimientoDTO.setNombre(establecimiento.getNombre());
         establecimientoDTO.setDescripcion(establecimiento.getDescripcion());
         establecimientoDTO.setActivo(establecimiento.getActivo());
+        establecimientoDTO.setRating(establecimiento.getRating());
         return establecimientoDTO;
     }
 }

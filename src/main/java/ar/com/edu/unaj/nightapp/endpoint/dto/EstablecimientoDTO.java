@@ -34,6 +34,9 @@ public class EstablecimientoDTO {
     @JsonProperty("Categorias")
     private List<CategoriaDTO> categorias;
 
+    @JsonProperty("Rating")
+    private Integer rating;
+
     @JsonProperty("Activo")
     private Boolean activo;
 

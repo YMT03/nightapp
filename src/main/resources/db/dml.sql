@@ -48,9 +48,14 @@ INSERT INTO UBICACIONES VALUES(DEFAULT,'9 de Julio 11',1, -34.672983,-58.3620329
 INSERT INTO UBICACIONES VALUES(DEFAULT,'Av. Bartolomé Mitre 6235',3, -34.672983,-58.3620329);
 
 
-INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Parrilla El Tano', 'La parrilla tradicional de Avellaneda',1,1);
-INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'La Roca',NULL,2,1);
-INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Vinilo',NULL,3,1);
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Parrilla El Tano', 'El Tano es una parrilla con tenedor libre ubicada en Avellaneda que hace culto de la informalidad y la comida abundante. Tiene un ambiente familiar, con mesas largas y las paredes decoradas con camisetas de fútbol.',1,1,5);
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'La Roca', 'El mejor bar-boliche de todo Buenos Aires. Pasate esta noche, te va a encantar!',2,1,3);
+
+--- FALTA ACTUALIZAR UBICACIONES/CREARLAS
+INSERT INTO ESTABLECIMIENTOS VALUES(DEFAULT,'Antares', 'Más de 80 apasionados por la cerveza artesanal que se esmeran día a día para hacer las cervezas más ricas, mejorar la calidad, ser innovadores, creativos y brindarle a nuestros clientes más de lo que esperan.',3,1,4);
+INSERT INTO ESTABLECIMIENTOS VALUES (DEFAULT, 'Baires Sushi Club', 'Un estiloso y entretenido lugar donde encontrarás ricos tragos y una tentadora oferta de sushi para disfrutar un momento relajado y entretenido.Ubicados en el bohemio Barrio Brasil de Santiago Centro encontrarás un sitio con un ambiente vanguardista',1,1,3);
+INSERT INTO ESTABLECIMIENTOS VALUES (DEFAULT, 'La Birra Bar', 'Desde 2001 sirviendo comida casera y las mejores hamburguesas. Prestando especial atención al servicio y poniendo dedicación en la preparación del café.',2,1,5);
+
 
 
 INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un viernes a la noche', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');

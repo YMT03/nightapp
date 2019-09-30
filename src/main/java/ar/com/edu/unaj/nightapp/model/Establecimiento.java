@@ -22,6 +22,8 @@ public class Establecimiento {
     private String nombre;
     @Column(length=2000)
     private String descripcion;
+    @Column(length = 1)
+    private Integer rating;
     @OneToOne(cascade = {CascadeType.ALL})
     private Ubicacion ubicacion;
     @ToString.Exclude

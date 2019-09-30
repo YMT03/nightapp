@@ -1,5 +1,7 @@
 # CHANGELOG
 
+30/09/2019 -- Se agrega Rating en Establecimiento, java y DB.
+
 30/09/2019 -- Se agrega Filtro multiple.
 
 28/09/2019 -- Se agrega Menu. CRUD.
