@@ -18,7 +18,7 @@ public class FiltroDTO {
     private List<String> servicios;
 
     @NotEmpty
-    @JsonProperty("Menu")
+    @JsonProperty("Menus")
     private List<String> menus;
 
     @JsonProperty("Ubicacion")

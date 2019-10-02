@@ -50,7 +50,8 @@ public interface EstablecimientoDAO  extends PagingAndSortingRepository<Establec
             "INNER JOIN e.menus m " +
             "WHERE c.nombre IN (?1) " +
             "AND s.nombre IN (?2) " +
-            "AND m.nombre IN (?3) ")
+            "AND m.nombre IN (?3) " +
+            "ORDER BY e.nombre")
 
     List<Establecimiento> getPaginatedAndFiltered(List<String> categorias, List<String> servicios, List<String> menus, Pageable pageable);
 

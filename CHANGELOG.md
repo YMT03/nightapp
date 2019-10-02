@@ -1,5 +1,7 @@
 # CHANGELOG
 
+30/09/2019 -- Ordenamiento en Establecimientos filtrados y cambio de JsonProperty para compatibilidad con front.
+
 30/09/2019 -- Se agrega Rating en Establecimiento, java y DB.
 
 30/09/2019 -- Se agrega Filtro multiple.
