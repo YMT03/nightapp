@@ -1,22 +1,19 @@
 package ar.com.edu.unaj.nightapp.service;
 
 import ar.com.edu.unaj.nightapp.dao.EstablecimientoDAO;
-import ar.com.edu.unaj.nightapp.endpoint.dto.EstablecimientoDTO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.FiltroDTO;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.CategoriaMapper;
 import ar.com.edu.unaj.nightapp.exception.EstablecimientoNotFoundException;
-import ar.com.edu.unaj.nightapp.model.Categoria;
 import ar.com.edu.unaj.nightapp.model.Establecimiento;
+import ar.com.edu.unaj.nightapp.model.Orden;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * Servicio encargado de la logica respecto a Establecimiento
@@ -43,7 +40,7 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
     @Override
     public List<Establecimiento> getAllPaginatedByNameContaining(Integer offset, Integer size, String name) {
         Pageable pageable = PageRequest.of(offset,size);
-        return establecimientoDAO.findByNombreContaining(name, pageable);
+        return establecimientoDAO.findByNombreContainingAndActivoTrueOrderByNombre(name, pageable);
     }
 
     /**
@@ -89,7 +86,20 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
 
     @Override
     public List<Establecimiento> getAllPaginatedAndFiltered(Integer offset, Integer size, FiltroDTO filtroDTO) {
-        Pageable pageable = PageRequest.of(offset,size);
+        Sort sort = new Sort(filtroDTO.getOrden().name().toLowerCase());
+        switch (filtroDTO.getOrden()){
+            case RATING:
+                sort.descending();
+                sort.and(new Sort(Orden.NOMBRE.name().toLowerCase()));
+                break;
+            case DISTANCIA:
+                sort.and(new Sort(Orden.NOMBRE.name().toLowerCase()));
+                break;
+            default:
+                sort.ascending();
+                break;
+        }
+        Pageable pageable = PageRequest.of(offset,size, sort);
         return establecimientoDAO.getPaginatedAndFiltered(filtroDTO.getCategorias(),filtroDTO.getServicios(),filtroDTO.getMenus(), pageable);
     }
 }
