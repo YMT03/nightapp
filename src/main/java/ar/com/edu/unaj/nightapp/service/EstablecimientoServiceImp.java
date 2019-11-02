@@ -89,8 +89,8 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
         Sort sort = new Sort(filtroDTO.getOrden().name().toLowerCase());
         switch (filtroDTO.getOrden()){
             case RATING:
-                sort.descending();
-                sort.and(new Sort(Orden.NOMBRE.name().toLowerCase()));
+                sort = sort.descending();
+                sort = sort.and(new Sort(Orden.NOMBRE.name().toLowerCase()));
                 break;
             case DISTANCIA:
                 sort.and(new Sort(Orden.NOMBRE.name().toLowerCase()));

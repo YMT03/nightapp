@@ -1,5 +1,7 @@
 # CHANGELOG
 
+02/11/2019 -- OrderBy Fixed.
+
 02/11/2019 -- Update DB dml.
 
 18/10/2019 -- Posibilidad de Ordenar por nombre o rating. 
