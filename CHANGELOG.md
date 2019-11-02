@@ -1,5 +1,7 @@
 # CHANGELOG
 
+02/11/2019 -- Update DB dml.
+
 18/10/2019 -- Posibilidad de Ordenar por nombre o rating. 
 
 30/09/2019 -- Ordenamiento en Establecimientos filtrados y cambio de JsonProperty para compatibilidad con front.
