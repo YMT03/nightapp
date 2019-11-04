@@ -18,6 +18,12 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
     private CategoriaMapper categoriaMapper;
 
     @Autowired
+    private ServicioMapper servicioMapper;
+
+    @Autowired
+    private ComentarioMapper comentarioMapper;
+
+    @Autowired
     private UbicacionMapper ubicacionMapper;
     /**
      * Mappea un Establecimiento a EstablecimientoDTO. BO a Vista.
@@ -31,8 +37,14 @@ public class EstablecimientoMapper implements Mapper<Establecimiento,Establecimi
         establecimientoDTO.setNombre(establecimiento.getNombre());
         establecimientoDTO.setDescripcion(establecimiento.getDescripcion());
         establecimientoDTO.setActivo(establecimiento.getActivo());
+        establecimientoDTO.setDireccion(establecimiento.getUbicacion().getDireccion());
+        establecimientoDTO.setCiudad(establecimiento.getUbicacion().getCiudad().getNombre());
+        if(establecimiento.getComentarios()!=null && !establecimiento.getComentarios().isEmpty())
+            establecimientoDTO.setComentarioDTOS(establecimiento.getComentarios().stream().map(x->comentarioMapper.mapToDTO(x)).collect(Collectors.toList()));
         if(establecimiento.getCategorias()!=null && !establecimiento.getCategorias().isEmpty())
         establecimientoDTO.setCategorias(establecimiento.getCategorias().stream().map(x->categoriaMapper.mapToDTO(x)).collect(Collectors.toList()));
+        if(establecimiento.getServicios()!=null && !establecimiento.getServicios().isEmpty())
+            establecimientoDTO.setServicioDTOS(establecimiento.getServicios().stream().map(x->servicioMapper.mapToDTO(x)).collect(Collectors.toList()));
         establecimientoDTO.setRating(establecimiento.getRating());
         return establecimientoDTO;
     }

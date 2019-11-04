@@ -1,5 +1,7 @@
 # CHANGELOG
 
+04/11/2019 -- Seteos en EstablecimientoDTO
+
 02/11/2019 -- OrderBy Fixed.
 
 02/11/2019 -- Update DB dml.
