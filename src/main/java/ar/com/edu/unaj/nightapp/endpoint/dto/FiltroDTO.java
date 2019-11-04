@@ -30,4 +30,7 @@ public class FiltroDTO {
     @NotNull
     private Orden orden;
 
+    @JsonProperty("Nombre")
+    private String nombre;
+
 }

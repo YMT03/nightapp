@@ -100,6 +100,6 @@ public class EstablecimientoServiceImp implements EstablecimientoService {
                 break;
         }
         Pageable pageable = PageRequest.of(offset,size, sort);
-        return establecimientoDAO.getPaginatedAndFiltered(filtroDTO.getCategorias(),filtroDTO.getServicios(),filtroDTO.getMenus(), pageable);
+        return establecimientoDAO.getPaginatedAndFiltered(filtroDTO.getNombre(), filtroDTO.getCategorias(),filtroDTO.getServicios(),filtroDTO.getMenus(), pageable);
     }
 }

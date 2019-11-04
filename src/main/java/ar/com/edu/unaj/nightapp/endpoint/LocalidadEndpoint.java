@@ -1,8 +1,11 @@
 package ar.com.edu.unaj.nightapp.endpoint;
 
+import ar.com.edu.unaj.nightapp.endpoint.dto.CiudadDTO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.LocalidadDTO;
+import ar.com.edu.unaj.nightapp.endpoint.mapper.CiudadMapper;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.LocalidadMapper;
 import ar.com.edu.unaj.nightapp.model.Localidad;
+import ar.com.edu.unaj.nightapp.service.interfaces.CiudadService;
 import ar.com.edu.unaj.nightapp.service.interfaces.LocalidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,12 @@ public class LocalidadEndpoint {
 
     @Autowired
     private LocalidadService localidadService;
+
+    @Autowired
+    private CiudadService ciudadService;
+
+    @Autowired
+    private CiudadMapper ciudadMapper;
 
     @Autowired
     private LocalidadMapper localidadMapper;
@@ -41,6 +50,11 @@ public class LocalidadEndpoint {
     @PostMapping
     public LocalidadDTO insert(@RequestBody @Valid LocalidadDTO categoriaDTO){
         return localidadMapper.mapToDTO(localidadService.insert(localidadMapper.mapToBO(categoriaDTO)));
+    }
+
+    @GetMapping("{id}/ciudades")
+    public List<CiudadDTO> getAllCiudades(@PathVariable Long id){
+        return ciudadService.getAllFromLocalidadId(id).stream().map(x->ciudadMapper.mapToDTO(x)).collect(Collectors.toList());
     }
 
     @PutMapping

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+04/11/2019 -- Endpoint para obtener todas las ciudades de una localidad
+
+04/11/2019 -- Busqueda por nombre en el filtro
+
 04/11/2019 -- Seteos en EstablecimientoDTO
 
 02/11/2019 -- OrderBy Fixed.

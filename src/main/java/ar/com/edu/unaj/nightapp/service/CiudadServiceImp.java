@@ -45,4 +45,9 @@ public class CiudadServiceImp implements CiudadService {
     public void removeById(Long id) throws LocalidadNotFoundException {
         ciudadDAO.delete(ciudadDAO.findById(id).orElseThrow(CiudadNotFoundException::new));
     }
+
+    @Override
+    public List<Ciudad> getAllFromLocalidadId(Long id) {
+        return ciudadDAO.getAllFromLocalidadId(id);
+    }
 }

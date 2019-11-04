@@ -12,4 +12,5 @@ public interface CiudadService {
     Ciudad getById(Long id) throws CiudadNotFoundException;
     Ciudad update(Ciudad localidad);
     void removeById(Long id);
+    List<Ciudad> getAllFromLocalidadId(Long id);
 }
