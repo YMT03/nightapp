@@ -1,5 +1,7 @@
 # CHANGELOG
 
+05/11/2019 -- Posibilidad de logeo con encriptacion MD5 basica. A pulir. Unico rol por usuario
+
 04/11/2019 -- Endpoint para obtener todas las ciudades de una localidad
 
 04/11/2019 -- Busqueda por nombre en el filtro

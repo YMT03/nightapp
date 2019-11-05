@@ -8,6 +8,7 @@ import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -93,6 +94,7 @@ public class EstablecimientoEndpoint {
     public List<EstablecimientoDTO> insert(@RequestBody @Valid FiltroDTO filtroDTO, @RequestParam(defaultValue = "0") Integer offset,
                                             @RequestParam(defaultValue = "20") Integer size){
         size=size>50?50:size;
+        //SecurityContextHolder.getContext().getAuthentication(); USUARIO LOGGEADO
         return establecimientoService.getAllPaginatedAndFiltered(offset,size,filtroDTO).stream().map(x->establecimientoMapper.mapToDTO(x)).collect(Collectors.toList());
     }
 
