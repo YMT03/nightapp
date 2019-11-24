@@ -14,6 +14,7 @@ public class Messages {
     public static final String CIUDAD_NOT_FOUND_EXCEPTION ="La Ciudad solicitada no existe";
     public static final String SERVICIO_NOT_FOUND_EXCEPTION ="El Servicio solicitado no existe";
     public static final String MENU_NOT_FOUND_EXCEPTION ="El Menu solicitado no existe";
+    public static final String USUARIO_NOT_FOUND_EXCEPTION ="El Usuario solicitado no existe";
 
     //Validations
     //TODO

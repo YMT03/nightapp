@@ -1,15 +1,8 @@
-INSERT INTO PERSONAS VALUES(DEFAULT, 'Juan','Perez','38383838','juan@hotmail.com',0,'Crisologo Larralde 2020','20383838386');
-INSERT INTO PERSONAS VALUES(DEFAULT, 'Maria','Teresa','12121212','mariateresa@gmail.com',1,'Av. San Juan 150', NULL);
-INSERT INTO PERSONAS VALUES(DEFAULT, 'FEDE','MARTINEZ','4184858','guti.nas@gmail.com',1,'Supisiche 1500', NULL);
-INSERT INTO PERSONAS VALUES(DEFAULT, 'Natalia','Fernandez','2683849','nati.nati@noreply.com',0,'Crisologo Larralde 2020', NULL);
-INSERT INTO PERSONAS VALUES(DEFAULT, 'Nicolas','Fernandez','3483859','admin@nightapp.com',1,'Av. Cordero 6690', NULL);
-
-
-INSERT INTO USUARIOS VALUES(DEFAULT, 'owner', MD5('owner'),'OWNER',1,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'mariateresa', MD5('maria'),'USER',2,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'fede', MD5('fede'), 'USER',3,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'natifernandez', MD5('nati'), 'USER',4,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'admin', MD5('admin'), 'ADMIN',5,1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'owner', MD5('owner'),'OWNER','Juan','Perez','juan@hotmail.com',0,1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'mariateresa', MD5('maria'),'USER', 'Maria','Teresa','mariateresa@gmail.com',1, 1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'fede', MD5('fede'), 'USER','FEDE','MARTINEZ','guti.nas@gmail.com',1,1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'natifernandez', MD5('nati'), 'USER','Natalia','Fernandez','nati.nati@noreply.com',0,1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'admin', MD5('admin'), 'ADMIN','Nicolas','Fernandez','admin@nightapp.com',1,1);
 
 
 INSERT INTO LOCALIDADES VALUES(DEFAULT, 'Quilmes');
