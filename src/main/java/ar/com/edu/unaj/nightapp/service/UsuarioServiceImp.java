@@ -63,6 +63,11 @@ public class UsuarioServiceImp implements UsuarioService {
         return usuarioDAO.findById(id).orElseThrow(UsuarioNotFoundException::new);
     }
 
+    @Override
+    public Usuario findByUserName(String userName) {
+        return usuarioDAO.findByUserName(userName);
+    }
+
     /**
      * @param usuario a updatearr
      * @return Usuario updateada

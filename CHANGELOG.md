@@ -1,5 +1,7 @@
 # CHANGELOG
 
+26/11/2019 -- Integracion inicial Login
+
 26/11/2019 -- Integracion alta de Usuario
 
 24/11/2019 -- Modificacion en DB. Alta, baja y modificacion de Usuarios.

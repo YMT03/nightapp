@@ -10,4 +10,6 @@ public interface UsuarioDAO extends CrudRepository<Usuario, Long> {
 
     @Query(value = "INSERT INTO USUARIOS() VALUES()",nativeQuery = true)
     Usuario insertEncrypted(Usuario usuario);
+
+    Usuario findByUserName(String userName);
 }

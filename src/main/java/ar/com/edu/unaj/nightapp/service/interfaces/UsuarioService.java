@@ -10,5 +10,6 @@ public interface UsuarioService {
     Usuario insert(Usuario usuario);
     Usuario getById(Long id);
     Usuario update(Usuario usuario);
+    Usuario findByUserName(String userName);
     void removeById(Long id);
 }

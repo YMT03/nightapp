@@ -1,13 +1,15 @@
 package ar.com.edu.unaj.nightapp.endpoint;
 
+import ar.com.edu.unaj.nightapp.endpoint.dto.LoginDTO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.RegisterDTO;
 import ar.com.edu.unaj.nightapp.endpoint.dto.UsuarioDTO;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.UsuarioMapper;
 import ar.com.edu.unaj.nightapp.model.Usuario;
 import ar.com.edu.unaj.nightapp.service.interfaces.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
@@ -55,6 +57,15 @@ public class UsuarioEndpoint {
         String decodedPassword = new String(decodedBytes);
         usuario.setPassword(decodedPassword);
         return usuarioMapper.mapToDTO(usuarioService.insert(usuario));
+    }
+
+    @RolesAllowed({"USER","OWNER","ADMIN"})
+    @PostMapping("login")
+    public UsuarioDTO login(){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String username= principal instanceof UserDetails?((UserDetails)principal).getUsername():principal.toString();
+        return usuarioMapper.mapToDTO(usuarioService.findByUserName(username));
     }
 
     @PutMapping
