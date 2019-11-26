@@ -29,5 +29,8 @@ public class ComentarioDTO {
     @NotNull
     private String descripcion;
 
+    @JsonProperty("NombreUsuario")
+    private String nombreUsuario;
+
 
 }

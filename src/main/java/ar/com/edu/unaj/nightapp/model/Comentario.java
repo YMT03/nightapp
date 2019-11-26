@@ -30,4 +30,9 @@ public class Comentario {
     @Column(name="ESTABLECIMIENTO_ID",insertable = false, updatable = false)
     private Long establecimientoId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @JoinColumn(name = "USUARIO_ID")
+    private Usuario usuario;
+
 }

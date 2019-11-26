@@ -34,16 +34,16 @@ INSERT INTO ESTABLECIMIENTOS VALUES (DEFAULT, 'La Birra Bar', 'Desde 2001 sirvie
 
 
 
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un viernes a la noche', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Gran lugar', 'Buen lugar para ir con amigos');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,4, 'Me gusto', 'Bien');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Mejor que McDonalds', 'Si vas una vez no volves nunca mas a McDonalds');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,3, 'OKOK', 'OKOK BIEN SESESESE');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Lugarrrr unicooooo', 'Re va.. una LOCURAAAAAA');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,2, 'No volveria', 'Tardaron y el ambiente deja bastante que desear. La hamburguesa fria, aunque era rica');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un paty', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Gran lugar', 'Buen lugar para ir con amigos');
-INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,1, 'El barman un maleducado', 'No volveria');
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un viernes a la noche', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100',1);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Gran lugar', 'Buen lugar para ir con amigos',1);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,4, 'Me gusto', 'Bien',2);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 2,4, 'Mejor que McDonalds', 'Si vas una vez no volves nunca mas a McDonalds',2);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,3, 'OKOK', 'OKOK BIEN SESESESE',3);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Lugarrrr unicooooo', 'Re va.. una LOCURAAAAAA',4);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,2, 'No volveria', 'Tardaron y el ambiente deja bastante que desear. La hamburguesa fria, aunque era rica',3);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'El mejor lugar para un paty', 'La verdad una locura. Nada mejor que este lugar, totalmente recomendable. +100',2);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 1,5, 'Gran lugar', 'Buen lugar para ir con amigos',4);
+INSERT INTO COMENTARIOS VALUES(DEFAULT, 3,1, 'El barman un maleducado', 'No volveria',2);
 
 
 INSERT INTO MENUS VALUES (DEFAULT, 'Vegano');

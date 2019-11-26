@@ -1,5 +1,7 @@
 # CHANGELOG
 
+26/11/2019 -- Comentario pertence a usuario
+
 26/11/2019 -- Integracion inicial Login
 
 26/11/2019 -- Integracion alta de Usuario
