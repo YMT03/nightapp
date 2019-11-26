@@ -24,8 +24,8 @@ public class Usuario {
     @Column(name = "MAIL")
     private String mail;
     @Column(name = "MAIL_CONFIRMADO")
-    private Boolean securedMail;
+    private Boolean securedMail = false;
     @Column(name = "ACTIVO")
-    private Boolean active;
+    private Boolean active = true;
 
 }

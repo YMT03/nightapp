@@ -7,17 +7,24 @@ import ar.com.edu.unaj.nightapp.model.Usuario;
 import ar.com.edu.unaj.nightapp.service.interfaces.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
  * Servicio encargado de la logica respecto a Usuario
  */
 @Service
+@Transactional
 public class UsuarioServiceImp implements UsuarioService {
 
     @Autowired
     private UsuarioDAO usuarioDAO;
+
+    @Autowired
+    private EntityManager entityManager;
 
     /**
      * @return Todas las usuarios.
@@ -33,7 +40,17 @@ public class UsuarioServiceImp implements UsuarioService {
      */
     @Override
     public Usuario insert(Usuario usuario) {
-        return usuarioDAO.save(usuario);
+        Query query = entityManager.createNativeQuery("INSERT INTO USUARIOS(ID,USERNAME,PASSWORD,ROL,NOMBRE,APELLIDO,MAIL,MAIL_CONFIRMADO, ACTIVO) VALUES(DEFAULT, :userName, MD5(:password), :rol, :name,:password,:mail,:secureMail,:active)");
+        query.setParameter("userName",usuario.getUserName());
+        query.setParameter("name",usuario.getNombre());
+        query.setParameter("password",usuario.getPassword());
+        query.setParameter("rol",usuario.getRol());
+        query.setParameter("mail",usuario.getMail());
+        query.setParameter("secureMail",usuario.getSecuredMail());
+        query.setParameter("active",usuario.getActive());
+        query.executeUpdate();
+
+        return usuario;
     }
 
     /**
