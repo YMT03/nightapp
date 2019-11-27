@@ -1,7 +1,7 @@
 INSERT INTO USUARIOS VALUES(DEFAULT, 'owner', MD5('owner'),'OWNER','Juan','Perez','juan@hotmail.com',0,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'mariateresa', MD5('maria'),'USER', 'Maria','Teresa','mariateresa@gmail.com',1, 1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'maria', MD5('maria'),'USER', 'Maria','Teresa','mariateresa@gmail.com',1, 1);
 INSERT INTO USUARIOS VALUES(DEFAULT, 'fede', MD5('fede'), 'USER','FEDE','MARTINEZ','guti.nas@gmail.com',1,1);
-INSERT INTO USUARIOS VALUES(DEFAULT, 'natifernandez', MD5('nati'), 'USER','Natalia','Fernandez','nati.nati@noreply.com',0,1);
+INSERT INTO USUARIOS VALUES(DEFAULT, 'nati', MD5('nati'), 'USER','Natalia','Fernandez','nati.nati@noreply.com',0,1);
 INSERT INTO USUARIOS VALUES(DEFAULT, 'admin', MD5('admin'), 'ADMIN','Nicolas','Fernandez','admin@nightapp.com',1,1);
 
 

@@ -14,6 +14,7 @@ public class ComentarioMapper implements Mapper<Comentario, ComentarioDTO> {
         comentarioDTO.setId(bo.getId());
         comentarioDTO.setTitulo(bo.getTitulo());
         comentarioDTO.setNombreUsuario(bo.getUsuario().getNombre());
+        comentarioDTO.setRating(bo.getRating());
 
         return comentarioDTO;
     }
@@ -24,6 +25,7 @@ public class ComentarioMapper implements Mapper<Comentario, ComentarioDTO> {
         comentario.setDescripcion(dto.getDescripcion());
         comentario.setTitulo(dto.getTitulo());
         comentario.setId(dto.getId());
+        comentario.setRating(dto.getRating());
         return comentario;
     }
 }

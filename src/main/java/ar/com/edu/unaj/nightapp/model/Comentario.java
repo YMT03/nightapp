@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 
 /**
  * Comentario (BO).
@@ -34,5 +35,9 @@ public class Comentario {
     @ToString.Exclude
     @JoinColumn(name = "USUARIO_ID")
     private Usuario usuario;
+
+    @Column(name = "CALIFICACION")
+    @Max(5)
+    private Integer rating;
 
 }

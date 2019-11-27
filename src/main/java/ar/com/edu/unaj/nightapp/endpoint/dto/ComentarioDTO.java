@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -21,16 +22,20 @@ public class ComentarioDTO {
 
     @JsonProperty("Titulo")
     @Size(max = 70)
-    @NotNull
+    @NotBlank
     private String titulo;
 
-    @JsonProperty("Descripcion")
+    @JsonProperty("Comentario")
     @Size(max = 2000)
-    @NotNull
+    @NotBlank
     private String descripcion;
 
     @JsonProperty("NombreUsuario")
     private String nombreUsuario;
+
+    @JsonProperty("Rating")
+    @NotNull
+    private Integer rating;
 
 
 }

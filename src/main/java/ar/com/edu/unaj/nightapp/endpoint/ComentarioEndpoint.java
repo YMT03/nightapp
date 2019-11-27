@@ -2,13 +2,16 @@ package ar.com.edu.unaj.nightapp.endpoint;
 
 import ar.com.edu.unaj.nightapp.endpoint.dto.ComentarioDTO;
 import ar.com.edu.unaj.nightapp.endpoint.mapper.ComentarioMapper;
-import ar.com.edu.unaj.nightapp.exception.ComentarioNotFoundException;
 import ar.com.edu.unaj.nightapp.model.Comentario;
 import ar.com.edu.unaj.nightapp.model.Establecimiento;
+import ar.com.edu.unaj.nightapp.model.Usuario;
 import ar.com.edu.unaj.nightapp.service.interfaces.ComentarioService;
 import ar.com.edu.unaj.nightapp.service.interfaces.EstablecimientoService;
+import ar.com.edu.unaj.nightapp.service.interfaces.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +27,9 @@ public class ComentarioEndpoint {
 
     @Autowired
     private ComentarioMapper comentarioMapper;
+
+    @Autowired
+    private UsuarioService usuarioService;
 
     @Autowired
     private EstablecimientoService establecimientoService;
@@ -45,7 +51,11 @@ public class ComentarioEndpoint {
     @PostMapping
     public ComentarioDTO insert(@RequestBody @Valid ComentarioDTO comentarioDTO, @PathVariable Long id){
         Establecimiento establecimiento = establecimientoService.getById(id); //Si no existe Exception
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username= principal instanceof UserDetails ?((UserDetails)principal).getUsername():principal.toString();
+        Usuario usuario = usuarioService.findByUserName(username);
         Comentario comentario = comentarioMapper.mapToBO(comentarioDTO);
+        comentario.setUsuario(usuario);
         comentario.setEstablecimiento(establecimiento);
         return comentarioMapper.mapToDTO(comentarioService.insert(comentario));
     }
